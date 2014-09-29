@@ -132,12 +132,17 @@ namespace AEDemo
         /// <param name="Play">是否正在播放的标识</param>
         public static void PlayMusic()
         {
-            //string sMusicPath = Parameters.g_sBgmPath + "安妮的仙境(annie's w'onderland).mp3";
-            //mciSendString(sCmd, null, 0, 0);
-
-            mciSendString("close temp_alias", null, 0, 0);
+           
+         
+            //string sCmd = @"open ""E:\LIKE\AEDemo\AEDemo\bin\x86\bgm\安妮的仙境(annie's w'onderland).mp3"" alias temp_alias";
+            
             //// ？？？？？怎么设置相对路径啊，格式总写不对
-            mciSendString(@"open ""E:\LIKE\AEDemo\AEDemo\bin\x86\bgm\安妮的仙境(annie's w'onderland).mp3"" alias temp_alias", null, 0, 0);
+            //// ！！！！！格式问题搞定啦，sCmd就是命令
+            //mciSendString(@"open ""E:\LIKE\AEDemo\AEDemo\bin\x86\bgm\安妮的仙境(annie's w'onderland).mp3"" alias temp_alias", null, 0, 0);
+
+            string sCmd = "open " + '"' + Parameters.g_sBgmPath + "安妮的仙境(annie's w'onderland).mp3" + '"' + " alias temp_alias";
+            mciSendString("close temp_alias", null, 0, 0);
+            mciSendString(sCmd, null, 0, 0);
             if (Parameters.g_bPlayMusic == false)
             {
                 mciSendString("play temp_alias repeat", null, 0, 0);
