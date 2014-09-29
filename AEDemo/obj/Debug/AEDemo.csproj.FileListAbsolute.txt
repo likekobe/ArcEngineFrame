@@ -7,3 +7,15 @@ E:\LIKE\AEDemo\AEDemo\bin\Debug\AEDemo.exe
 E:\LIKE\AEDemo\AEDemo\bin\Debug\AEDemo.pdb
 E:\LIKE\AEDemo\AEDemo\obj\Debug\AEDemo.exe
 E:\LIKE\AEDemo\AEDemo\obj\Debug\AEDemo.pdb
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.exe
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.pdb
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\bin\Debug\AEDemo.exe
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\bin\Debug\AEDemo.pdb
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\ResolveAssemblyReference.cache
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.frmFrame.resources
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.frmLayerProperty.resources
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.frmPropertyDetails.resources
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.frmShowLog.resources
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.Properties.Resources.resources
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.csproj.GenerateResource.Cache
+E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\Debug\AEDemo.exe.licenses

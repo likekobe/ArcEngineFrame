@@ -161,10 +161,10 @@ namespace AEDemo
         public static bool ShowLayerProperty(frmLayerProperty frm, ILayer Layer)
         {
             bool bResult = false;
+            IFeatureLayer pFeaLayer = Layer as IFeatureLayer;
+            IFeatureClass pFeaClass = pFeaLayer.FeatureClass;
             try
             {
-                IFeatureLayer pFeaLayer = Layer as IFeatureLayer;
-                IFeatureClass pFeaClass = pFeaLayer.FeatureClass;
                 //// 获取字段个数
                 int iFieldCount = pFeaClass.Fields.FieldCount;
 
@@ -211,7 +211,8 @@ namespace AEDemo
             }
             finally
             {
-
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaLayer);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaClass);
             }
             return bResult;
         }
@@ -223,19 +224,73 @@ namespace AEDemo
         /// <returns></returns>
         public static bool ShowPropertyDetails(frmPropertyDetails frm, ILayer Layer)
         {
+            frm.gcFieldInfo.DataSource = null;
             bool bResult = false;
+            IFeatureLayer pFeaLayer = Layer as IFeatureLayer;
+            IFeatureClass pFeaClass = pFeaLayer.FeatureClass;
+            IFeatureCursor pFeaCursor = pFeaClass.Search(null, false);
+            IFeature pFea = pFeaCursor.NextFeature();
+            int iFieldCount = pFeaClass.Fields.FieldCount;
+            DataTable dt = new DataTable();
             try
             {
+                for (int i = 0; i < iFieldCount;i++ )
+                {
+                    string sFieldName = pFeaClass.Fields.get_Field(i).Name;
+                    dt.Columns.Add(sFieldName);
+                }
+
+                while(pFea!=null)
+                {
+                    DataRow dr = dt.NewRow();
+                    for (int i = 0; i < iFieldCount;i++ )
+                    {
+                        if (pFeaClass.Fields.get_Field(i).Type == esriFieldType.esriFieldTypeGeometry)
+                        {
+                            if (pFea.Shape.GeometryType.ToString().ToLower().Equals("esrigeometrypolygon"))
+                            {
+                                dr[i] = "面";
+                            }
+                            else if (pFea.Shape.GeometryType.ToString().ToLower().Equals("esrigeometrypolyline"))
+                            {
+                                dr[i] = "线";
+                            }
+                            else if (pFea.Shape.GeometryType.ToString().ToLower().Equals("esrigeometrypoint"))
+                            {
+                                dr[i] = "点";
+                            }
+                        }
+                        else if (pFeaClass.Fields.get_Field(j).Type == esriFieldType.esriFieldTypeBlob)
+                        {
+                            dr[i] = "BLOB";
+                        }
+                        else
+                        {
+                            dr[i] = pFea.get_Value(i) != null ? pFea.get_Value(i) : string.Empty;
+                        }
+                    }
+                    dt.Rows.Add(dr);
+                    pFea = pFeaCursor.NextFeature();
+                }
+                frm.gcFieldInfo.DataSource = dt;
+                frm.gvFieldInfo.PopulateColumns();
+                frm.gvFieldInfo.BestFitColumns();
+                
                 bResult = true;
             }
             catch (Exception ex)
             {
+                WriteLog("显示字段详情失败：", ex.ToString());
                 bResult = false;
             }
             finally
             {
-
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaLayer);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaClass);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaCursor);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFea);
             }
+
             return bResult;
         }
     }

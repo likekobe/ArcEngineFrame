@@ -33,6 +33,7 @@ namespace AEDemo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        //// ！！！！！！点击Esc退出窗体后，会报错： 尝试读取或写入受保护的内存。这通常指示其他内存已损坏。
         private void frmFrame_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -153,9 +154,10 @@ namespace AEDemo
             if (axMapControl1.LayerCount > 0)
             {
                 frmLayerProperty frm = new frmLayerProperty();
-                //// ？？？？？并不显示在父窗体的中心，未设置子窗体的父窗体
+                //// ？？？？？并不显示在父窗体的中心，未设置子窗体的父窗体？？
+                //// 解答：！！！！ 以ShowDialog()方式显示窗体，才会在父窗体中心显示
                 frm.StartPosition = FormStartPosition.CenterParent;
-                frm.Show();
+                frm.ShowDialog();
             }
             else
             {
@@ -176,9 +178,8 @@ namespace AEDemo
             if (axMapControl1.LayerCount > 0)
             {
                 frmPropertyDetails frm = new frmPropertyDetails();
-                //// ？？？？？并不显示在父窗体的中心，未设置子窗体的父窗体
                 frm.StartPosition = FormStartPosition.CenterParent;
-                frm.Show();
+                frm.ShowDialog();
             }
             else
             {

@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPropertyDetails));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelLayerName = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.tlLayer = new DevExpress.XtraTreeList.TreeList();
+            this.LayerName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.gcFieldInfo = new DevExpress.XtraGrid.GridControl();
             this.gvFieldInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.LayerName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -55,7 +55,7 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.pictureEdit1);
-            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelLayerName);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Location = new System.Drawing.Point(1, 2);
             this.panelControl1.Name = "panelControl1";
@@ -75,13 +75,13 @@
             this.pictureEdit1.Size = new System.Drawing.Size(32, 32);
             this.pictureEdit1.TabIndex = 2;
             // 
-            // labelControl2
+            // labelLayerName
             // 
-            this.labelControl2.Location = new System.Drawing.Point(46, 36);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(70, 14);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "labelControl2";
+            this.labelLayerName.Location = new System.Drawing.Point(46, 36);
+            this.labelLayerName.Name = "labelLayerName";
+            this.labelLayerName.Size = new System.Drawing.Size(70, 14);
+            this.labelLayerName.TabIndex = 1;
+            this.labelLayerName.Text = "labelControl2";
             // 
             // labelControl1
             // 
@@ -112,10 +112,21 @@
             this.tlLayer.Name = "tlLayer";
             this.tlLayer.Size = new System.Drawing.Size(157, 319);
             this.tlLayer.TabIndex = 2;
+            this.tlLayer.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.tlLayer_FocusedNodeChanged);
+            // 
+            // LayerName
+            // 
+            this.LayerName.Caption = "图层名称";
+            this.LayerName.FieldName = "图层名称";
+            this.LayerName.Name = "LayerName";
+            this.LayerName.OptionsColumn.AllowEdit = false;
+            this.LayerName.Visible = true;
+            this.LayerName.VisibleIndex = 0;
             // 
             // gcFieldInfo
             // 
-            this.gcFieldInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.gcFieldInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gcFieldInfo.Location = new System.Drawing.Point(160, 72);
             this.gcFieldInfo.MainView = this.gvFieldInfo;
@@ -129,17 +140,10 @@
             // 
             this.gvFieldInfo.GridControl = this.gcFieldInfo;
             this.gvFieldInfo.Name = "gvFieldInfo";
+            this.gvFieldInfo.OptionsBehavior.Editable = false;
+            this.gvFieldInfo.OptionsView.ColumnAutoWidth = false;
             this.gvFieldInfo.OptionsView.EnableAppearanceEvenRow = true;
             this.gvFieldInfo.OptionsView.ShowGroupPanel = false;
-            // 
-            // LayerName
-            // 
-            this.LayerName.Caption = "图层名称";
-            this.LayerName.FieldName = "图层名称";
-            this.LayerName.Name = "LayerName";
-            this.LayerName.OptionsColumn.AllowEdit = false;
-            this.LayerName.Visible = true;
-            this.LayerName.VisibleIndex = 0;
             // 
             // frmPropertyDetails
             // 
@@ -174,11 +178,11 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelLayerName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvFieldInfo;
         public DevExpress.XtraGrid.GridControl gcFieldInfo;
         private DevExpress.XtraTreeList.Columns.TreeListColumn LayerName;
         public DevExpress.XtraTreeList.TreeList tlLayer;
+        public DevExpress.XtraGrid.Views.Grid.GridView gvFieldInfo;
     }
 }
