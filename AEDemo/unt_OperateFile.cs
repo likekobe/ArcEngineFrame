@@ -58,7 +58,7 @@ namespace AEDemo
                     //// 显示鹰眼
                     LoadEagleEye(frm);
                     frm.axMapControl1.Refresh();
-                    CommFunction.WriteLog(OpenDlg.Title, "打开地图文档成功。 文档路径：" + sFilePath);
+                    CommFunction.WriteLog(OpenDlg.Title, "打开地图文档成功。 地图文档路径：" + sFilePath);
                     bResult = true;
                 }
                 else

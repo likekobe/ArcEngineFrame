@@ -38,6 +38,7 @@
             this.LayerName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.gcFieldInfo = new DevExpress.XtraGrid.GridControl();
             this.gvFieldInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.LayerIndex = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -107,7 +108,8 @@
             this.tlLayer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.tlLayer.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.LayerName});
+            this.LayerName,
+            this.LayerIndex});
             this.tlLayer.Location = new System.Drawing.Point(1, 72);
             this.tlLayer.Name = "tlLayer";
             this.tlLayer.Size = new System.Drawing.Size(157, 319);
@@ -144,6 +146,12 @@
             this.gvFieldInfo.OptionsView.ColumnAutoWidth = false;
             this.gvFieldInfo.OptionsView.EnableAppearanceEvenRow = true;
             this.gvFieldInfo.OptionsView.ShowGroupPanel = false;
+            // 
+            // LayerIndex
+            // 
+            this.LayerIndex.Caption = "图层索引：";
+            this.LayerIndex.FieldName = "图层索引：";
+            this.LayerIndex.Name = "LayerIndex";
             // 
             // frmPropertyDetails
             // 
@@ -184,5 +192,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn LayerName;
         public DevExpress.XtraTreeList.TreeList tlLayer;
         public DevExpress.XtraGrid.Views.Grid.GridView gvFieldInfo;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn LayerIndex;
     }
 }
