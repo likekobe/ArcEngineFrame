@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="unt_CommFunction.cs" />
     <Compile Include="unt_OperateFile.cs" />
+    <Compile Include="unt_Parameters.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -133,6 +133,7 @@
             this.btnSave.LargeWidth = 85;
             this.btnSave.Name = "btnSave";
             this.btnSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
             // btnSaveAs
             // 
@@ -142,6 +143,7 @@
             this.btnSaveAs.LargeWidth = 85;
             this.btnSaveAs.Name = "btnSaveAs";
             this.btnSaveAs.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnSaveAs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaveAs_ItemClick);
             // 
             // btnEsc
             // 

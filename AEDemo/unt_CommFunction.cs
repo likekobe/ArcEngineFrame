@@ -18,9 +18,6 @@ namespace AEDemo
     /// </summary>
     class CommFunction
     {
-        private static string m_sProjectPath = Assembly.GetExecutingAssembly().Location;
-        private static string m_sLogPath = m_sProjectPath + "\\..\\..\\log\\";
-
         //private static uint SND_ASYNC = 0x0001;
         //private static uint SND_FILENAME = 0x00020000;
         /// <summary>
@@ -45,11 +42,11 @@ namespace AEDemo
             bool bResult = false;
             try
             {
-                DateTime dateTime = System.DateTime.Now;
-                string sTime = dateTime.GetDateTimeFormats('s')[0].ToString();
+                //DateTime dateTime = System.DateTime.Now;
+                string sTime = Parameters.g_DateTime.GetDateTimeFormats('s')[0].ToString();
                 sTime = sTime.Replace(":", "").ToString();
                 LogName = LogName + "(" + sTime + ").log";
-                string sPath = m_sLogPath + LogName;
+                string sPath = Parameters.g_sLogPath + LogName;
 
                 StreamWriter streamWrite = null;
                 streamWrite = new StreamWriter(sPath, false);
@@ -77,7 +74,7 @@ namespace AEDemo
             bool bResult = false;
             try
             {
-                DirectoryInfo dir = new DirectoryInfo(m_sLogPath);
+                DirectoryInfo dir = new DirectoryInfo(Parameters.g_sLogPath);
                 FileInfo[] files = dir.GetFiles();
                 FileAttributes fileAttributes;
 
@@ -133,23 +130,23 @@ namespace AEDemo
         /// 播放音乐
         /// </summary>
         /// <param name="Play">是否正在播放的标识</param>
-        public static void PlayMusic(bool Play)
+        public static void PlayMusic()
         {
-            string sMusicPath = m_sProjectPath + "\\..\\..\\bgm\\安妮的仙境(annie's w'onderland).mp3";
-            mciSendString("close temp_alias", null, 0, 0);
+            //string sMusicPath = Parameters.g_sBgmPath + "安妮的仙境(annie's w'onderland).mp3";
             //mciSendString(sCmd, null, 0, 0);
 
+            mciSendString("close temp_alias", null, 0, 0);
             //// ？？？？？怎么设置相对路径啊，格式总写不对
             mciSendString(@"open ""E:\LIKE\AEDemo\AEDemo\bin\x86\bgm\安妮的仙境(annie's w'onderland).mp3"" alias temp_alias", null, 0, 0);
-            if (Play == false)
+            if (Parameters.g_bPlayMusic == false)
             {
                 mciSendString("play temp_alias repeat", null, 0, 0);
-                frmFrame.g_bPlayMusic = true;
+                Parameters.g_bPlayMusic = true;
             }
-            else if (Play == true)
+            else if (Parameters.g_bPlayMusic == true)
             {
                 mciSendString("close temp_alias ", null, 0, 0);
-                frmFrame.g_bPlayMusic = false;
+                Parameters.g_bPlayMusic = false;
             }
         }
 
@@ -200,6 +197,7 @@ namespace AEDemo
                     dt.Rows.Add(dr);
                 }
                 frm.gcField.DataSource = dt;
+                frm.gvField.PopulateColumns();
                 frm.gvField.BestFitColumns();
 
                 bResult = true;
@@ -260,7 +258,7 @@ namespace AEDemo
                                 dr[i] = "点";
                             }
                         }
-                        else if (pFeaClass.Fields.get_Field(j).Type == esriFieldType.esriFieldTypeBlob)
+                        else if (pFeaClass.Fields.get_Field(i).Type == esriFieldType.esriFieldTypeBlob)
                         {
                             dr[i] = "BLOB";
                         }

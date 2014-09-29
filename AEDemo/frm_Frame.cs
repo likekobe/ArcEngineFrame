@@ -14,18 +14,11 @@ namespace AEDemo
 {
     public partial class frmFrame : DevExpress.XtraEditors.XtraForm
     {
-        /// <summary>
-        /// 是否播放背景音乐的判断
-        /// </summary>
-        public static bool g_bPlayMusic;
-        public static IMapControl2 g_pMapControl;
         public frmFrame()
         {
             InitializeComponent();
             axMapControlEagelEye.Visible = false;
-            g_bPlayMusic = false;
-            g_pMapControl = (IMapControl2)axMapControl1.Object ;
-            CommFunction.PlayMusic(g_bPlayMusic);
+            CommFunction.PlayMusic();
         }
 
         /// <summary>
@@ -86,6 +79,26 @@ namespace AEDemo
         }
 
         /// <summary>
+        /// 保存地图文档
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OperateFile.SaveDocument(this);
+        }
+
+        /// <summary>
+        /// 另存为
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveAs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OperateFile.SaveAsDocument(this);
+        }
+
+        /// <summary>
         /// 打开或关闭鹰眼界面
         /// </summary>
         /// <param name="sender"></param>
@@ -119,7 +132,7 @@ namespace AEDemo
         /// <param name="e"></param>
         private void btnShowLog_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (axMapControl1.LayerCount > 0)
+            if (Parameters.g_iLayerCount > 0)
             {
                 frmShowLog frm = new frmShowLog();
                 frm.StartPosition = FormStartPosition.CenterParent;
@@ -141,7 +154,7 @@ namespace AEDemo
         /// <param name="e"></param>
         private void btnPlayMusic_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            CommFunction.PlayMusic(g_bPlayMusic);
+            CommFunction.PlayMusic();
         }
 
         /// <summary>
@@ -151,7 +164,7 @@ namespace AEDemo
         /// <param name="e"></param>
         private void btnLayerProperty_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (axMapControl1.LayerCount > 0)
+            if (Parameters.g_iLayerCount > 0)
             {
                 frmLayerProperty frm = new frmLayerProperty();
                 //// ？？？？？并不显示在父窗体的中心，未设置子窗体的父窗体？？
@@ -175,7 +188,7 @@ namespace AEDemo
         /// <param name="e"></param>
         private void btnPropertyDetails_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (axMapControl1.LayerCount > 0)
+            if (Parameters.g_iLayerCount > 0)
             {
                 frmPropertyDetails frm = new frmPropertyDetails();
                 frm.StartPosition = FormStartPosition.CenterParent;
@@ -189,5 +202,6 @@ namespace AEDemo
                 }
             }
         }
+
     }
 }

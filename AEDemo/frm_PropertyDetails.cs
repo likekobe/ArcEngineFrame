@@ -17,7 +17,7 @@ namespace AEDemo
         {
             InitializeComponent();
             TreeListLoadLayer();
-            CommFunction.ShowPropertyDetails(this, frmFrame.g_pMapControl.get_Layer(0));
+            CommFunction.ShowPropertyDetails(this, Parameters.g_pMapControl.get_Layer(0));
         }
 
         /// <summary>
@@ -25,10 +25,10 @@ namespace AEDemo
         /// </summary>
         private void TreeListLoadLayer()
         {
-            int iLayerCount = frmFrame.g_pMapControl.LayerCount;
+            int iLayerCount = Parameters.g_pMapControl.LayerCount;
             for (int i = 0; i < iLayerCount; i++)
             {
-                string sLayerName = frmFrame.g_pMapControl.get_Layer(i).Name;
+                string sLayerName = Parameters.g_pMapControl.get_Layer(i).Name;
                 tlLayer.AppendNode(new object[] { sLayerName }, null);
             }
         }
@@ -42,7 +42,7 @@ namespace AEDemo
         {
             TreeListNode node = tlLayer.FocusedNode;
             int iLayerIndex = tlLayer.GetNodeIndex(node);
-            ILayer pLayer = frmFrame.g_pMapControl.get_Layer(iLayerIndex);
+            ILayer pLayer = Parameters.g_pMapControl.get_Layer(iLayerIndex);
             string sLayerName = pLayer.Name;
             labelLayerName.Text = "图层 【" + sLayerName + "】 属性表";
             CommFunction.ShowPropertyDetails(this, pLayer);

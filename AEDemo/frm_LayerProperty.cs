@@ -18,7 +18,7 @@ namespace AEDemo
             InitializeComponent();
             CboLoadLayer();
             cboLayer.SelectedIndex = 0;
-            CommFunction.ShowLayerProperty(this,frmFrame.g_pMapControl.get_Layer(0));
+            CommFunction.ShowLayerProperty(this,Parameters.g_pMapControl.get_Layer(0));
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -32,10 +32,10 @@ namespace AEDemo
         private void CboLoadLayer()
         {
 
-            int iLayerCount = frmFrame.g_pMapControl.LayerCount;
+            int iLayerCount = Parameters.g_pMapControl.LayerCount;
             for (int i = 0; i < iLayerCount; i++)
             {
-                ILayer pLayer = frmFrame.g_pMapControl.get_Layer(i);
+                ILayer pLayer = Parameters.g_pMapControl.get_Layer(i);
                 cboLayer.Properties.Items.Add(pLayer.Name);
             }
         }
@@ -48,7 +48,7 @@ namespace AEDemo
         private void cboLayer_SelectedIndexChanged(object sender, EventArgs e)
         {
             int iLayerIndex = cboLayer.SelectedIndex;
-            ILayer pLayer = frmFrame.g_pMapControl.get_Layer(iLayerIndex);
+            ILayer pLayer = Parameters.g_pMapControl.get_Layer(iLayerIndex);
             CommFunction.ShowLayerProperty(this, pLayer);
         }
 
