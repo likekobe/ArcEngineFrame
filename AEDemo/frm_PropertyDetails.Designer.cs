@@ -36,9 +36,9 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.tlLayer = new DevExpress.XtraTreeList.TreeList();
             this.LayerName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.LayerIndex = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.gcFieldInfo = new DevExpress.XtraGrid.GridControl();
             this.gvFieldInfo = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.LayerIndex = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -125,6 +125,12 @@
             this.LayerName.Visible = true;
             this.LayerName.VisibleIndex = 0;
             // 
+            // LayerIndex
+            // 
+            this.LayerIndex.Caption = "图层索引：";
+            this.LayerIndex.FieldName = "图层索引：";
+            this.LayerIndex.Name = "LayerIndex";
+            // 
             // gcFieldInfo
             // 
             this.gcFieldInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -146,12 +152,7 @@
             this.gvFieldInfo.OptionsView.ColumnAutoWidth = false;
             this.gvFieldInfo.OptionsView.EnableAppearanceEvenRow = true;
             this.gvFieldInfo.OptionsView.ShowGroupPanel = false;
-            // 
-            // LayerIndex
-            // 
-            this.LayerIndex.Caption = "图层索引：";
-            this.LayerIndex.FieldName = "图层索引：";
-            this.LayerIndex.Name = "LayerIndex";
+            this.gvFieldInfo.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvFieldInfo_RowCellClick);
             // 
             // frmPropertyDetails
             // 

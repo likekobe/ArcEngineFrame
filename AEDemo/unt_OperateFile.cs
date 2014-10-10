@@ -72,6 +72,20 @@ namespace AEDemo
             return bResult;
         }
 
+        ///// <summary>
+        ///// 拉框放大
+        ///// </summary>
+        //public static void ZoomIn(frmFrame frm)
+        //{
+
+        //    Parameters.g_pMapControl.MousePointer = esriControlsMousePointer.esriPointerCrosshair;
+        //    IEnvelope pEnv;
+        //    pEnv = Parameters.g_pMapControl.TrackRectangle();
+        //    frm.axMapControl1.Extent = pEnv;
+        //    frm.axMapControl1.Refresh();
+            
+        //}
+
         /// <summary>
         /// 显示鹰眼功能
         /// </summary>
@@ -189,8 +203,8 @@ namespace AEDemo
                             }
                         }
 
-                    }
-
+                    } 
+ 
                 }
             }
             catch (Exception ex)
@@ -199,6 +213,8 @@ namespace AEDemo
 
             }
         }
+
+    
 
 
     }

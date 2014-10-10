@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList.Nodes;
 using ESRI.ArcGIS.Carto;
+using ESRI.ArcGIS.Geodatabase;
 
 namespace AEDemo
 {
@@ -44,8 +45,19 @@ namespace AEDemo
             int iLayerIndex = Convert.ToInt32(node.GetDisplayText(1));
             string sLayerName = node.GetDisplayText(0);
             ILayer pLayer = Parameters.g_pMapControl.get_Layer(iLayerIndex);
+            //m_pLayer = pLayer;
             labelLayerName.Text = "图层 【" + sLayerName + "】 属性表";
             CommFunction.ShowPropertyDetails(this, pLayer);
+        }
+
+        /// <summary>
+        /// 单击一行，高亮显示所选要素
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void gvFieldInfo_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            CommFunction.FlashShape(this,(frmFrame)this.Owner);
         }
 
 

@@ -51,7 +51,7 @@ namespace AEDemo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// 
-        //// ！！！！！！！！！！！有问题啊，点击否 窗体还是会关闭
+        // ！！！！！！！！！！！有问题啊，点击否 窗体还是会关闭
         //private void frmFrame_FormClosing(object sender, FormClosingEventArgs e)
         //{
         //    ShowCloseFormTips();
@@ -192,7 +192,8 @@ namespace AEDemo
             {
                 frmPropertyDetails frm = new frmPropertyDetails();
                 frm.StartPosition = FormStartPosition.CenterParent;
-                frm.ShowDialog();
+                frm.Owner = this;
+                frm.Show();
             }
             else
             {
@@ -201,6 +202,38 @@ namespace AEDemo
                     btnOpenMxd_ItemClick(null, null);
                 }
             }
+        }
+
+        /// <summary>
+        /// 鼠标按下事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void axMapControl1_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
+        {
+            //// 鼠标中键按下，实现地图拖动
+            if (e.button==4)
+            {
+                axMapControl1.MousePointer = esriControlsMousePointer.esriPointerHand;
+                axMapControl1.Pan();  
+            }
+        }
+
+        //// MapControl中，在使用其它工具后，会使鼠标滚轮缩放失效，可以通过加入MouseDown或MouseUp事件让地图获得焦点，使此功能持续有效。
+        //// MapControl1在MouseUp后获得焦点，使滚轮放大缩小总是可用 
+        private void axMapControl1_OnMouseUp(object sender, IMapControlEvents2_OnMouseUpEvent e)
+        {
+            axMapControl1.Focus();
+        }
+
+        /// <summary>
+        /// 添加日志
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddLog_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
 
     }

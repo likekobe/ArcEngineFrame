@@ -42,6 +42,7 @@
             this.btnPlayMusic = new DevExpress.XtraBars.BarButtonItem();
             this.btnLayerProperty = new DevExpress.XtraBars.BarButtonItem();
             this.btnPropertyDetails = new DevExpress.XtraBars.BarButtonItem();
+            this.btnZoomIn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -85,9 +86,10 @@
             this.btnEagleEye,
             this.btnPlayMusic,
             this.btnLayerProperty,
-            this.btnPropertyDetails});
+            this.btnPropertyDetails,
+            this.btnZoomIn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnPlayMusic);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -173,6 +175,7 @@
             this.btnAddLog.LargeWidth = 85;
             this.btnAddLog.Name = "btnAddLog";
             this.btnAddLog.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAddLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddLog_ItemClick);
             // 
             // btnEagleEye
             // 
@@ -209,6 +212,13 @@
             this.btnPropertyDetails.Name = "btnPropertyDetails";
             this.btnPropertyDetails.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnPropertyDetails.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPropertyDetails_ItemClick);
+            // 
+            // btnZoomIn
+            // 
+            this.btnZoomIn.Caption = "拉框放大";
+            this.btnZoomIn.Glyph = ((System.Drawing.Image)(resources.GetObject("btnZoomIn.Glyph")));
+            this.btnZoomIn.Id = 19;
+            this.btnZoomIn.Name = "btnZoomIn";
             // 
             // ribbonPage1
             // 
@@ -318,6 +328,8 @@
             this.axMapControl1.Size = new System.Drawing.Size(756, 511);
             this.axMapControl1.TabIndex = 0;
             this.axMapControl1.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.axMapControl1_OnExtentUpdated);
+            this.axMapControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl1_OnMouseDown);
+            this.axMapControl1.OnMouseUp += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseUpEventHandler(this.axMapControl1_OnMouseUp);
             // 
             // imageCollection
             // 
@@ -418,6 +430,7 @@
         private DevExpress.XtraBars.BarButtonItem btnPlayMusic;
         private DevExpress.XtraBars.BarButtonItem btnLayerProperty;
         private DevExpress.XtraBars.BarButtonItem btnPropertyDetails;
+        private DevExpress.XtraBars.BarButtonItem btnZoomIn;
 
     }
 }

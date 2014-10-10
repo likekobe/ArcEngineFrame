@@ -10,6 +10,7 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Geodatabase;
 using System.Data;
+using System.Windows.Forms;
 
 namespace AEDemo
 {
@@ -294,6 +295,52 @@ namespace AEDemo
                 ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFea);
             }
 
+            return bResult;
+        }
+
+        public static bool FlashShape(frmPropertyDetails frm,frmFrame frmMain)
+        {
+            bool bResult = false;
+
+            try 
+            {
+                TreeListNode node = frm.tlLayer.FocusedNode;
+                int iLayerIndex = Convert.ToInt32(node.GetDisplayText(1));
+                string sLayerName = node.GetDisplayText(0);
+                ILayer pLayer = Parameters.g_pMapControl.get_Layer(iLayerIndex);
+
+                IFeatureLayer pFeaLayer = pLayer as IFeatureLayer;
+                IFeatureClass pFeaClass = pFeaLayer.FeatureClass;
+                IFeatureCursor pFeaCursor;
+                IFeature pFea;
+
+                DataRow dr = frm.gvFieldInfo.GetFocusedDataRow();
+                string sOIDName = pFeaClass.OIDFieldName.ToString();
+                string sOIDValue = dr[sOIDName].ToString();
+
+                string sQuery = "" + sOIDName + " = " + sOIDValue + "";
+                IQueryFilter pQueryFilter = new QueryFilterClass();
+                pQueryFilter.WhereClause = sQuery;
+
+                //// 根据唯一编号的ObjectID 或者 FID，查询出来的要素也是唯一的
+                pFeaCursor = pFeaClass.Search(pQueryFilter, false);
+                pFea = pFeaCursor.NextFeature();
+
+                frmMain.axMapControl1.FlashShape(pFea.Shape);
+                //frmMain.axMapControl1.Refresh(esriViewDrawPhase.esriViewGeoSelection, null, null);
+              
+
+                bResult = true;
+            }
+            catch(Exception ex)
+            {
+
+                bResult = false;
+            }
+            finally
+            {
+            
+            }
             return bResult;
         }
     }
