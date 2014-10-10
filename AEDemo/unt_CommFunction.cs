@@ -327,8 +327,17 @@ namespace AEDemo
                 pFea = pFeaCursor.NextFeature();
 
                 frmMain.axMapControl1.FlashShape(pFea.Shape);
+
+                frmMain.axMapControl1.Extent = pFea.Shape.Envelope;
+
+                
                 //frmMain.axMapControl1.Refresh(esriViewDrawPhase.esriViewGeoSelection, null, null);
-              
+
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaLayer);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaClass);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFeaCursor);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pFea);
+                ESRI.ArcGIS.ADF.ComReleaser.ReleaseCOMObject(pQueryFilter);
 
                 bResult = true;
             }
