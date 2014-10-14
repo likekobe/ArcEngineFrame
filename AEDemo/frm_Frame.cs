@@ -236,5 +236,18 @@ namespace AEDemo
 
         }
 
+        private void frmFrame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddData_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //OperateFile.AddShapeFile();
+            String[] Shapefile = new String[2];
+            Shapefile = OperateFile.AddShapeFile(this);
+            axMapControl1.AddShapeFile(Shapefile[0],Shapefile[1]);
+        }
+
     }
 }

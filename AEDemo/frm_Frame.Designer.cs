@@ -57,6 +57,7 @@
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
+            this.btnPropertyQuery = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -87,9 +88,10 @@
             this.btnPlayMusic,
             this.btnLayerProperty,
             this.btnPropertyDetails,
-            this.btnZoomIn});
+            this.btnZoomIn,
+            this.btnPropertyQuery});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 20;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.btnPlayMusic);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -97,7 +99,7 @@
             this.ribbonPage2,
             this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.SelectedPage = this.ribbonPage1;
+            this.ribbonControl1.SelectedPage = this.ribbonPage3;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
             this.ribbonControl1.Size = new System.Drawing.Size(969, 145);
             this.ribbonControl1.Toolbar.ItemLinks.Add(this.btnOpenMxd, "打开文件");
@@ -126,6 +128,7 @@
             this.btnAddData.LargeWidth = 85;
             this.btnAddData.Name = "btnAddData";
             this.btnAddData.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAddData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddData_ItemClick);
             // 
             // btnSave
             // 
@@ -262,13 +265,15 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
+            this.ribbonPage3.ImageAlign = DevExpress.Utils.HorzAlignment.Center;
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "查询";
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPropertyQuery);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "属性查询";
+            this.ribbonPageGroup3.Text = "查询";
             // 
             // splitContainerControl1
             // 
@@ -327,9 +332,9 @@
             this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
             this.axMapControl1.Size = new System.Drawing.Size(756, 511);
             this.axMapControl1.TabIndex = 0;
-            this.axMapControl1.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.axMapControl1_OnExtentUpdated);
             this.axMapControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.axMapControl1_OnMouseDown);
             this.axMapControl1.OnMouseUp += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseUpEventHandler(this.axMapControl1_OnMouseUp);
+            this.axMapControl1.OnExtentUpdated += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnExtentUpdatedEventHandler(this.axMapControl1_OnExtentUpdated);
             // 
             // imageCollection
             // 
@@ -375,6 +380,14 @@
             this.axToolbarControl1.Size = new System.Drawing.Size(296, 28);
             this.axToolbarControl1.TabIndex = 3;
             // 
+            // btnPropertyQuery
+            // 
+            this.btnPropertyQuery.Caption = "属性查询";
+            this.btnPropertyQuery.Id = 20;
+            this.btnPropertyQuery.LargeWidth = 85;
+            this.btnPropertyQuery.Name = "btnPropertyQuery";
+            this.btnPropertyQuery.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // frmFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -388,6 +401,7 @@
             this.Name = "frmFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArcEngine Frame";
+            this.Load += new System.EventHandler(this.frmFrame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmFrame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
@@ -431,6 +445,7 @@
         private DevExpress.XtraBars.BarButtonItem btnLayerProperty;
         private DevExpress.XtraBars.BarButtonItem btnPropertyDetails;
         private DevExpress.XtraBars.BarButtonItem btnZoomIn;
+        private DevExpress.XtraBars.BarButtonItem btnPropertyQuery;
 
     }
 }

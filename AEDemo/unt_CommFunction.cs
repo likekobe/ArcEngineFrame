@@ -141,7 +141,7 @@ namespace AEDemo
             //// ！！！！！格式问题搞定啦，sCmd就是命令
             //mciSendString(@"open ""E:\LIKE\AEDemo\AEDemo\bin\x86\bgm\安妮的仙境(annie's w'onderland).mp3"" alias temp_alias", null, 0, 0);
 
-            string sCmd = "open " + '"' + Parameters.g_sBgmPath + "安妮的仙境(annie's w'onderland).mp3" + '"' + " alias temp_alias";
+            string sCmd = "open " + '"' + Parameters.g_sBgmPath + "无与伦比的美丽.mp3" + '"' + " alias temp_alias";
             mciSendString("close temp_alias", null, 0, 0);
             mciSendString(sCmd, null, 0, 0);
             if (Parameters.g_bPlayMusic == false)
