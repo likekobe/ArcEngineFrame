@@ -219,6 +219,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "图层属性";
             this.TopMost = true;
+          //  this.Load += new System.EventHandler(this.frmLayerProperty_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

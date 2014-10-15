@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AEDemo">
+</Property><Property Name="解决方案文件" Value="E:\github\AE\ArcEngineFrame\AEDemo.sln">
+</Property><Property Name="用户选项文件" Value="E:\github\AE\ArcEngineFrame\AEDemo.suo">
+</Property><Property Name="Date" Value="2014年10月13日">
+</Property><Property Name="Time" Value="8:46">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AEDemo.sln" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo.sln">
+</Event><Event ErrorLevel="0" Project="" Source="AEDemo.suo" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo.suo">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\AEDemo.csproj" Description="项目文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\AEDemo.csproj">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_Frame.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_Frame.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_Frame.Designer.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_Frame.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_LayerProperty.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_LayerProperty.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_LayerProperty.Designer.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_LayerProperty.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_PropertyDetails.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_PropertyDetails.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_PropertyDetails.Designer.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_PropertyDetails.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_ShowLog.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_ShowLog.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_ShowLog.Designer.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_ShowLog.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Program.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Program.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Properties\AssemblyInfo.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Properties\Resources.Designer.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Properties\Settings.Designer.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\unt_CommFunction.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\unt_CommFunction.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\unt_OperateFile.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\unt_OperateFile.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\unt_Parameters.cs" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\unt_Parameters.cs">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Properties\Settings.settings" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_Frame.resx" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_Frame.resx">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_LayerProperty.resx" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_LayerProperty.resx">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_PropertyDetails.resx" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_PropertyDetails.resx">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\frm_ShowLog.resx" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\frm_ShowLog.resx">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Properties\licenses.licx" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Properties\licenses.licx">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\Properties\Resources.resx" Description="文件已成功备份为 E:\github\AE\ArcEngineFrame\Backup\AEDemo\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\AEDemo.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="AEDemo" Source="AEDemo\AEDemo.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AEDemo.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="AEDemo.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AEDemo" Source="AEDemo\AEDemo.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

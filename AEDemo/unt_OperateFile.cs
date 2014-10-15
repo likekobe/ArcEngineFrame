@@ -26,15 +26,17 @@ namespace AEDemo
         {
 
             IMapDocument pMapDoc = new MapDocumentClass();
+           // ILayer pLayer = new FeatureLayerClass();
             bool bResult = false;
             OpenFileDialog OpenDlg = new OpenFileDialog();
             OpenDlg.Title = "打开地图文档";
             OpenDlg.Filter = "map documents(*.mxd)|*.mxd";
+            OpenDlg.InitialDirectory = "E";
             if (OpenDlg.ShowDialog() == DialogResult.OK)
             {
-                string sFilePath = OpenDlg.FileName;
-                if (frm.axMapControl1.CheckMxFile(sFilePath))
-                {
+                  string sFilePath = OpenDlg.FileName;
+              //  if (frm.axMapControl1.CheckMxFile(sFilePath))
+              //  {
                     ////// 设置鼠标指针的显示样式  ？？？？？但为什么设置两次
                     //frm.axMapControl1.MousePointer = esriControlsMousePointer.esriPointerArrowHourglass;
                     //frm.axMapControl1.LoadMxFile(sFilePath, 0, Type.Missing);
@@ -49,6 +51,7 @@ namespace AEDemo
                         frm.axMapControl1.Map = pMapDoc.get_Map(i);
                     }
 
+
                     //// 把需要用到的地图参数都传入Parameters类中，便于读取
                     Parameters.g_pMapControl = (IMapControl2)frm.axMapControl1.Object;
                     Parameters.g_pMapDoc = pMapDoc;
@@ -60,13 +63,13 @@ namespace AEDemo
                     frm.axMapControl1.Refresh();
                     CommFunction.WriteLog(OpenDlg.Title, "打开地图文档成功。 地图文档路径：" + sFilePath);
                     bResult = true;
-                }
-                else
+            //    }
+       /*         else
                 {
                     MessageBox.Show(sFilePath + "不是有效的地图文档。");
                     CommFunction.WriteLog(OpenDlg.Title, "打开地图文档失败，不是有效的地图文档。");
                     bResult = false;
-                }
+                }*/
             }
 
             return bResult;
@@ -214,8 +217,31 @@ namespace AEDemo
             }
         }
 
-    
 
+        /// <summary>
+        /// 添加矢量、栅格数据
+        /// </summary>
+        /// <param name="frm"></param>
+        public static String[] AddShapeFile(frmFrame frm)
+        {
+            String[] Shapefile = new String[2];
+            OpenFileDialog openDlg = new OpenFileDialog();
+            openDlg.InitialDirectory = "E";
+            openDlg.Title = "添加数据";
+            openDlg.Filter = "Shape文件(*.shp)|*.shp";
+            if (openDlg.ShowDialog() == DialogResult.OK)
+            {
+                string Filepath = openDlg.FileName;
+               // Shapefile = Filepath.Split("\\");
+                int index = Filepath.LastIndexOf("\\");
+                Shapefile[0] = Filepath.Substring(0,index);
+                Shapefile[1] = Filepath.Substring(index+1);
+                Parameters.g_pMapControl = (IMapControl2)frm.axMapControl1.Object;
+                Parameters.g_iLayerCount = 1;
+            }
+            return Shapefile;
+ 
+        }
 
     }
 }

@@ -22,3 +22,15 @@ E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.exe.licenses
 E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.pdb
 E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\bin\x86\Debug\AEDemo.exe
 E:\LIKE\AEDemo\ArcEngineFrame\AEDemo\bin\x86\Debug\AEDemo.pdb
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.exe
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.pdb
+E:\github\AE\ArcEngineFrame\AEDemo\bin\x86\Debug\AEDemo.exe
+E:\github\AE\ArcEngineFrame\AEDemo\bin\x86\Debug\AEDemo.pdb
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.csprojResolveAssemblyReference.cache
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.frmFrame.resources
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.frmLayerProperty.resources
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.frmPropertyDetails.resources
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.frmShowLog.resources
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.Properties.Resources.resources
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.csproj.GenerateResource.Cache
+E:\github\AE\ArcEngineFrame\AEDemo\obj\x86\Debug\AEDemo.exe.licenses
