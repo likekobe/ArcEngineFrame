@@ -13,7 +13,7 @@ namespace AEDemo
         [STAThread]
         static void Main()
         {
-            ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.Engine);
+            //ESRI.ArcGIS.RuntimeManager.Bind(ESRI.ArcGIS.ProductCode.Engine);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //frmFrame frmMain = new frmFrame();
